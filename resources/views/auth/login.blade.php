@@ -6,13 +6,13 @@
       <div class="row justify-content-center">
           <div class="col-md-8">
               <div class="card">
-                  <div class="card-header">Login</div>
+                  <div class="card-header">Logowanie</div>
                   <div class="card-body">
   
                       <form action="{{ route('login.post') }}" method="POST">
                           @csrf
                           <div class="form-group row">
-                              <label for="email_address" class="col-md-4 col-form-label text-md-right">E-Mail Address</label>
+                              <label for="email_address" class="col-md-4 col-form-label text-md-right">Adres e-mail</label>
                               <div class="col-md-6">
                                   <input type="text" id="email_address" class="form-control" name="email" required autofocus>
                                   @if ($errors->has('email'))
@@ -22,7 +22,7 @@
                           </div>
   
                           <div class="form-group row">
-                              <label for="password" class="col-md-4 col-form-label text-md-right">Password</label>
+                              <label for="password" class="col-md-4 col-form-label text-md-right">Hasło</label>
                               <div class="col-md-6">
                                   <input type="password" id="password" class="form-control" name="password" required>
                                   @if ($errors->has('password'))
@@ -35,7 +35,7 @@
                               <div class="col-md-6 offset-md-4">
                                   <div class="checkbox">
                                       <label>
-                                          <input type="checkbox" name="remember"> Remember Me
+                                          <input type="checkbox" name="remember"> Zapamiętaj mnie
                                       </label>
                                   </div>
                               </div>
@@ -43,7 +43,7 @@
   
                           <div class="col-md-6 offset-md-4">
                               <button type="submit" class="btn btn-primary">
-                                  Login
+                                  Zaloguj
                               </button>
                           </div>
                       </form>
