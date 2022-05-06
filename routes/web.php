@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
   
 use App\Http\Controllers\Auth\AuthController;
+use App\Http\Controllers\Settings\ProfileController as ProfileSettingsController;
   
 /*
 |--------------------------------------------------------------------------
@@ -29,4 +30,9 @@ Route::get('/', function() {
     return view('welcome', [
        'name' => 'World'
     ]);
+	
+//
+Route::get('settings', [ProfileSettingsController::class, 'edit'])->name('settings.profile');
+Route::put('settings', [ProfileSettingsController::class, 'update'])->name('settings.profile.update');
+//
 });
