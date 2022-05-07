@@ -3,7 +3,8 @@
 use Illuminate\Support\Facades\Route;
   
 use App\Http\Controllers\Auth\AuthController;
-use App\Http\Controllers\Settings\ProfileController as ProfileSettingsController;
+use App\Http\Controllers\ProfilesController;
+
   
 /*
 |--------------------------------------------------------------------------
@@ -25,14 +26,15 @@ Route::get('logout', [AuthController::class, 'logout'])->name('logout');
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+        
+    //route for user profile
+    Route::get('/users/profile', 'ProfilesController@index')->name('users.profile');
+    Route::post('/users/profile/update', 'ProfilesController@update')->name('users.profile.update');
+    Route::get('/users/profile/create', 'ProfilesController@create')->name('users.profile.create'); 
+
 
 Route::get('/', function() { 
     return view('welcome', [
        'name' => 'World'
     ]);
-	
-//
-Route::get('settings', [ProfileSettingsController::class, 'edit'])->name('settings.profile');
-Route::put('settings', [ProfileSettingsController::class, 'update'])->name('settings.profile.update');
-//
 });
