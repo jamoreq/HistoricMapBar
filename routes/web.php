@@ -3,9 +3,7 @@
 use Illuminate\Support\Facades\Route;
   
 use App\Http\Controllers\Auth\AuthController;
-use App\Http\Controllers\ProfilesController;
 
-  
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -27,14 +25,18 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
         
-    //route for user profile
-    Route::get('/users/profile', 'ProfilesController@index')->name('users.profile');
-    Route::post('/users/profile/update', 'ProfilesController@update')->name('users.profile.update');
-    Route::get('/users/profile/create', 'ProfilesController@create')->name('users.profile.create'); 
-
 
 Route::get('/', function() { 
     return view('welcome', [
        'name' => 'World'
     ]);
+});
+Route::middleware([
+    'auth:sanctum',
+    config('jetstream.auth_session'),
+    'verified'
+])->group(function () {
+    Route::get('/dashboard', function () {
+        return view('dashboard');
+    })->name('dashboard');
 });
