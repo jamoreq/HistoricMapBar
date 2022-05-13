@@ -28,13 +28,13 @@
 
                 <!-- Current Profile Photo -->
                 <div class="mt-2" x-show="! photoPreview">
-                    <img src="{{ $this->user->profile_photo_url }}" alt="{{ $this->user->first_name }}" class="rounded-full h-20 w-20 object-cover">
+                    <img src="{{ $this->user->profile_photo_url }}" alt="{{ $this->user->name }}" class="rounded-full h-20 w-20 object-cover">
                 </div>
 
                 <!-- New Profile Photo Preview -->
-                <div class="mt-2" x-show="photoPreview">
-                    <span class="block rounded-full w-20 h-20"
-                          x-bind:style="'background-size: cover; background-repeat: no-repeat; background-position: center center; background-image: url(\'' + photoPreview + '\');'">
+                <div class="mt-2" x-show="photoPreview" style="display: none;">
+                    <span class="block rounded-full w-20 h-20 bg-cover bg-no-repeat bg-center"
+                          x-bind:style="'background-image: url(\'' + photoPreview + '\');'">
                     </span>
                 </div>
 
@@ -52,18 +52,11 @@
             </div>
         @endif
 
-        <!-- First name -->
+        <!-- Name -->
         <div class="col-span-6 sm:col-span-4">
-            <x-jet-label for="first_name" value="{{ __('Imię') }}" />
-            <x-jet-input id="first_name" type="text" class="mt-1 block w-full" wire:model.defer="state.first_name" autocomplete="first_name" />
-            <x-jet-input-error for="first_name" class="mt-2" />
-        </div>
-
-        <!-- Last name -->
-        <div class="col-span-6 sm:col-span-4">
-            <x-jet-label for="last_name" value="{{ __('Nazwisko') }}" />
-            <x-jet-input id="last_name" type="text" class="mt-1 block w-full" wire:model.defer="state.last_name" autocomplete="last_name" />
-            <x-jet-input-error for="last_name" class="mt-2" />
+            <x-jet-label for="name" value="{{ __('Nazwa użytkownika') }}" />
+            <x-jet-input id="name" type="text" class="mt-1 block w-full" wire:model.defer="state.name" autocomplete="name" />
+            <x-jet-input-error for="name" class="mt-2" />
         </div>
 
         <!-- Email -->
@@ -71,6 +64,22 @@
             <x-jet-label for="email" value="{{ __('Adres e-mail') }}" />
             <x-jet-input id="email" type="email" class="mt-1 block w-full" wire:model.defer="state.email" />
             <x-jet-input-error for="email" class="mt-2" />
+
+            @unless ($this->user->hasVerifiedEmail())
+                <p class="text-sm mt-2">
+                    {{ __('Twój adres e-mail jest niezweryfikowany.') }}
+
+                    <button type="button" class="underline text-sm text-gray-600 hover:text-gray-900" wire:click.prevent="sendEmailVerification">
+                        {{ __('Kliknij tutaj, aby ponownie wysłać weryfikacyjną wiadomość e-mail.') }}
+                    </button>
+                </p>
+
+                @if ($this->verificationLinkSent)
+                    <p v-show="verificationLinkSent" class="mt-2 font-medium text-sm text-green-600">
+                        {{ __('Nowy link weryfikacyjny został wysłany na Twój adres e-mail.') }}
+                    </p>
+                @endif
+            @endif
         </div>
     </x-slot>
 

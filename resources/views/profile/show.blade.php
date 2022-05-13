@@ -11,10 +11,6 @@
                 @livewire('profile.update-profile-information-form')
 
                 <x-jet-section-border />
-
-                @livewire('profile.profile-contact-information-form')
-
-                <x-jet-section-border />
             @endif
 
             @if (Laravel\Fortify\Features::enabled(Laravel\Fortify\Features::updatePasswords()))
