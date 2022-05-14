@@ -28,10 +28,13 @@ class CreateNewUser implements CreatesNewUsers
 			'g-recaptcha-response' => 'required|captcha',
         ])->validate();
 
-        return User::create([
+        $user=User::create([
             'name' => $input['name'],
             'email' => $input['email'],
             'password' => Hash::make($input['password']),
         ]);
+		
+		$user->roles()->attach(2);
+        return $user;
     }
 }
