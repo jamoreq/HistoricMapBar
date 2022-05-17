@@ -13,7 +13,7 @@
                 @if ($showingConfirmation)
                     {{ __('Zakończ włączanie uwierzytelniania dwuskładnikowego.') }}
                 @else
-                    {{ __('You have enabled two factor authentication.') }}
+                    {{ __('Włączono uwierzytelnianie dwuskładnikowe.') }}
                 @endif
             @else
                 {{ __('Nie włączono uwierzytelniania dwuskładnikowego.') }}

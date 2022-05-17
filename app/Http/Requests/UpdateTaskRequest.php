@@ -10,7 +10,10 @@ class UpdateTaskRequest extends FormRequest
     public function rules()
     {
         return [
-            'description' => [
+            'name' => [
+                'required', 'string',
+            ]
+			'description' => [
                 'required', 'string',
             ]
         ];
