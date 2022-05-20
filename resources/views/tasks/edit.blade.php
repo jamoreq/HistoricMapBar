@@ -22,6 +22,7 @@
                         </div>
 						<div class="px-4 py-5 bg-white sm:p-6">
                             <label for="description" class="block font-medium text-sm text-gray-700">Opis artykułu</label>
+							
 						<x-head.tinymce-config/>
 						<x-forms.tinymce-editor/>
                     </div>
