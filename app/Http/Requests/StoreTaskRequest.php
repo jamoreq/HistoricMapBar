@@ -10,18 +10,13 @@ class StoreTaskRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => [
+            'title' => [
                 'required', 'string',
-			'description' => [
-                'required', 'string',
+			'body' => [
+                'required', 'text',
             ]
 			
             ]
         ];
-    }
-
-    public function authorize()
-    {
-        return Gate::allows('task_access');
     }
 }

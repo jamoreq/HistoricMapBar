@@ -11,7 +11,7 @@
 <x-app-layout> 
    <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Dodawanie artykułu') }}
+            {{ __('Edytowanie artykułu') }}
         </h2>
     </x-slot>
     <div class="container mt-5">
@@ -27,7 +27,7 @@
                 <textarea class="tinymce-editor" name="body"></textarea>
             </div>
             <div class="form-group text-center">
-                <button type="submit" class="btn btn-success btn-block">Opublikuj artykuł</button>
+                <button type="submit" class="btn btn-success btn-block">Edytuj artykuł</button>
             </div>
         </form>
     </div>

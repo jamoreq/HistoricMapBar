@@ -1,33 +1,50 @@
-<x-app-layout>
-    <x-slot name="header">
+<!DOCTYPE html>
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">  
+<head>
+
+  <script src="https://cdn.tiny.cloud/1/fk1oe0ut7i6nzoq82ntt7if82h26qo1ft3trnu0popaq9cl3/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>    
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<x-app-layout> 
+   <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            Edytowanie artykułu
+            {{ __('Dodawanie artykułu') }}
         </h2>
     </x-slot>
-
-    <div>
-        <div class="max-w-4xl mx-auto py-10 sm:px-6 lg:px-8">
-            <div class="mt-5 md:mt-0 md:col-span-2">
-                <form method="post" action="{{ route('tasks.update', $task->id) }}">
-                    @csrf
-                    @method('PUT')
-                    <div class="shadow overflow-hidden sm:rounded-md">
-                        <div class="px-4 py-5 bg-white sm:p-6">
-                            <label for="name" class="block font-medium text-sm text-gray-700">Nazwa artykułu</label>
-                            <input type="text" name="name" id="name" type="text" class="form-input rounded-md shadow-sm mt-1 block w-full"
-                                   value="{{ old('name', $task->name) }}" />
-                            @error('name')
-                                <p class="text-sm text-red-600">{{ $message }}</p>
-                            @enderror
-                        </div>
-						<div class="px-4 py-5 bg-white sm:p-6">
-                            <label for="description" class="block font-medium text-sm text-gray-700">Opis artykułu</label>
-							
-						<x-head.tinymce-config/>
-						<x-forms.tinymce-editor/>
-                    </div>
-                </form>
+    <div class="container mt-5">
+        <form method="post" action="{{ route('posts.store') }}" enctype="">
+            @csrf
+            <div class="form-group">
+                <label>Nazwa artykułu</label>
+                <input type="text" name="title" class="form-control" />
             </div>
-        </div>
+			<br>
+            <div class="form-group">
+                <label>Opis artykułu</label>
+                <textarea class="tinymce-editor" name="body"></textarea>
+            </div>
+            <div class="form-group text-center">
+                <button type="submit" class="btn btn-success btn-block">Opublikuj artykuł</button>
+            </div>
+        </form>
     </div>
-</x-app-layout>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  
+     <script>
+    tinymce.init({
+      selector: 'textarea',
+      plugins: 'a11ychecker advcode casechange export formatpainter image editimage linkchecker autolink lists checklist media mediaembed pageembed permanentpen powerpaste table advtable tableofcontents tinycomments tinymcespellchecker',
+      toolbar: 'a11ycheck addcomment showcomments casechange checklist code export formatpainter image editimage pageembed permanentpen table tableofcontents',
+      toolbar_mode: 'floating',
+      tinycomments_mode: 'embedded',
+      tinycomments_author: 'Author name',
+    });
+  </script>
+  </x-app-layout>
+  <br><br>
+</body>
+</html>

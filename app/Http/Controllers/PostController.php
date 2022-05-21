@@ -17,6 +17,11 @@ class PostController extends Controller
     {
         return view('postsCreate');
     }
+	
+	 public function edit()
+    {
+        return view('postsEdit');
+    }
       
     /**
      * Write code on Method
@@ -31,6 +36,11 @@ class PostController extends Controller
         ]);
  
         $post = Post::create([
+            'title' => $request->title,
+            'body' => $request->body
+        ]);
+		
+		  $post = Post::edit([
             'title' => $request->title,
             'body' => $request->body
         ]);
