@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\ArticleController;
+use App\Http\Controllers\GoogleController;
 
 /*
 |--------------------------------------------------------------------------
@@ -44,4 +45,4 @@ Route::get('/article/edit',[ArticleController::class, 'index2'])->name('article.
 Route::post('/save-article',[ArticleController::class, 'storeArticle'])->name('store.article');
 Route::get('/article/{id}',[ArticleController::class, 'showArticle'])->name('show.article');
 
-
+Route::get('google-autocomplete', [GoogleController::class, 'index']);
