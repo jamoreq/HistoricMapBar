@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\GoogleController;
+use App\Http\Livewire\Posts;
 
 /*
 |--------------------------------------------------------------------------
@@ -46,3 +47,5 @@ Route::post('/save-article',[ArticleController::class, 'storeArticle'])->name('s
 Route::get('/article/{id}',[ArticleController::class, 'showArticle'])->name('show.article');
 
 Route::get('google-autocomplete', [GoogleController::class, 'index']);
+
+Route::get('posts', Posts::class)->middleware('auth');

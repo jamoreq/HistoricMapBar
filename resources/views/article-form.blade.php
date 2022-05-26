@@ -10,23 +10,23 @@
 <x-app-layout> 
    <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Dodawanie artykułu') }}
+            {{ __('Publikowanie artykułu') }}
         </h2>
     </x-slot>
     <div class="container mt-5">
         <form method="post" action="{{ route('store.article') }}" enctype="">
             @csrf
             <div class="form-group">
-                <label>Nazwa artykułu</label>
+                <label>Tytuł artykułu</label>
                 <input type="text" name="title" class="form-control" />
             </div>
 			<br>
             <div class="form-group">
-                <label>Opis artykułu</label>
+                <label>Treść artykułu</label>
                  <textarea name="description" rows="5" cols="40" class="form-control tinymce-editor"></textarea>
 				 <br>
 			<div class="form-group">
-                <label>Autor</label>
+                <label>Autor artykułu</label>
                  <input type="text" name="author" class="form-control"/>
                     </div>   	 
 				<br>	
