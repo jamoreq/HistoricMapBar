@@ -23,9 +23,9 @@
   
     <script type="text/javascript">
         function initMap() {
-          const myLatLng = { lat: 50.2734719, lng: 70.7512559 };
+          const myLatLng = { lat: 50.0541, lng: 19.9354 };
           const map = new google.maps.Map(document.getElementById("map"), {
-            zoom: 5,
+            zoom: 6,
             center: myLatLng,
           });
   
