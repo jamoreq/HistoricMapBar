@@ -11,7 +11,7 @@
     <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
     <style type="text/css">
         #map {
-          height: 500px;
+          height: 470px;
 		  width: 700px;
         }
     </style>
@@ -41,6 +41,10 @@
   
     <script type="text/javascript"
         src="https://maps.google.com/maps/api/js?key={{ env('GOOGLE_MAP_KEY') }}&callback=initMap" ></script>
+		
+		<div class="block mb-8">
+                <a href="/contact-us" class="bg-green-500 hover:bg-green-700 text-white font-bold py-1 px-1 rounded">Zgłoś błąd</a>
+            </div>
   
 </body>
 </x-app-layout>
