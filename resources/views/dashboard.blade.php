@@ -17,6 +17,29 @@
     </style>
 </head>
 <body>
+<div id="artykuly">
+                <a href="/article/1" >Artykuł 1</a>
+				<hr>
+				 <a href="/article/2" >Artykuł 2</a>
+				 <hr>
+				  <a href="/article/3" >Artykuł 3</a>
+				  <hr>
+				   <a href="/article/4" >Artykuł 4</a>
+				   <hr>
+				    <a href="/article/5" >Artykuł 5</a>
+					<hr>
+					 <a href="/article/6" >Artykuł 6</a>
+		</div>
+					
+		<style type="text/css">
+        #artykuly{
+        float: right; 
+		font-size: 18px;
+		  background-color: #ccc;
+		  width: 645px;
+        }
+		</style>
+		
     <div class="container mt-5">
         <div id="map"></div>
     </div>
@@ -45,6 +68,5 @@
 		<div class="block mb-8">
                 <a href="/contact-us" class="bg-green-500 hover:bg-green-700 text-white font-bold py-1 px-1 rounded">Zgłoś błąd</a>
             </div>
-  
 </body>
 </x-app-layout>
