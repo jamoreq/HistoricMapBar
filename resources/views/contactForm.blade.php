@@ -16,8 +16,8 @@
 </head>
 <body>
     <div class="container">
-        <div class="row mt-5 mb-5">
-            <div class="col-10 offset-1 mt-5">
+        <div class="row mt-0 mb-0">
+            <div class="col-10 offset-1 mt-2">
                 <div class="card">
                     <div class="card-header bg-primary">
                         <h3 class="text-white"></h3>
