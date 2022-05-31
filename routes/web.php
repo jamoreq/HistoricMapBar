@@ -7,6 +7,8 @@ use App\Http\Controllers\GoogleController;
 use App\Http\Livewire\Posts;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\SearchController;
+use App\Http\Controllers\MapController;
+use Cornford\Googlmapper\Facades\MapperFacade;
 
 /*
 |--------------------------------------------------------------------------
@@ -57,5 +59,6 @@ Route::group(['middleware' => 'auth'], function () {
 	Route::controller(SearchController::class)->group(function(){
     Route::get('demo-search', 'index');
     Route::get('autocomplete', 'autocomplete')->name('autocomplete');
+	
 });
 });

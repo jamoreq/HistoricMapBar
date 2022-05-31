@@ -13,7 +13,8 @@
         "laravel/sanctum": "^2.14.1",
         "laravel/tinker": "^2.7",
         "livewire/livewire": "^2.10",
-        "tinymce/tinymce": "^6.0"
+        "tinymce/tinymce": "^6.0",
+		"cornford/googlmapper": "3.*"
     },
     "require-dev": {
         "fakerphp/faker": "^1.9.1",
