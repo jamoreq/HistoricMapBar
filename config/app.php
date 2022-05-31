@@ -155,6 +155,7 @@ return [
     */
 
     'providers' => [
+	Cornford\Googlmapper\MapperServiceProvider::class,
 
         /*
          * Laravel Framework Service Providers...
@@ -211,7 +212,7 @@ return [
     */
 
     'aliases' => Facade::defaultAliases()->merge([
-        // 'ExampleClass' => App\Example\ExampleClass::class,
+        'Mapper'         => Cornford\Googlmapper\Facades\MapperFacade::class,
     ])->toArray(),
 
 ];
