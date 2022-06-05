@@ -19,4 +19,8 @@ class StoreTaskRequest extends FormRequest
             ]
         ];
     }
+	    public function authorize()
+    {
+        return Gate::allows('task_access');
+    }
 }
