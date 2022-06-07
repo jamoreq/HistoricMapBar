@@ -49,9 +49,7 @@ Route::group(['middleware' => 'auth'], function () {
 	Route::get('contact-us', [ContactController::class, 'index']);
 	Route::post('contact-us', [ContactController::class, 'store'])->name('contact.us.store');
 	
-	Route::controller(SearchController::class)->group(function(){
-    Route::get('demo-search', 'index');
-    Route::get('autocomplete', 'autocomplete')->name('autocomplete');
+	Route::get('search', [SearchController::class, 'index'])->name('search');
+	Route::get('autocomplete', [SearchController::class, 'autocomplete'])->name('autocomplete');
 	
-});
 });
