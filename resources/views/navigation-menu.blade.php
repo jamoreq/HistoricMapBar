@@ -25,7 +25,7 @@
                     </div>       
 
                     <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                        <x-jet-nav-link a href="/demo-search">
+                        <x-jet-nav-link a href="/search">
                             Wyszukiwarka
                         </x-jet-nav-link>
                     </div>     					
