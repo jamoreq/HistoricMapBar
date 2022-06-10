@@ -59,33 +59,57 @@
             center: myLatLng2,
           });
   
-          new google.maps.Marker({
+          const marker=new google.maps.Marker({
             position: myLatLng,
             map,
             title: "",
           });
-		  new google.maps.Marker({
+		  const marker2=new google.maps.Marker({
             position: myLatLng2,
             map,
             title: "",
           });
-		  new google.maps.Marker({
+		  const marker3=new google.maps.Marker({
             position: myLatLng3,
             map,
             title: "",
           });
-		  new google.maps.Marker({
+		  const marker4=new google.maps.Marker({
             position: myLatLng4,
             map,
             title: "",
           });
-		  new google.maps.Marker({
+		  const marker5=new google.maps.Marker({
             position: myLatLng5,
             map,
             title: "",
           });
-        }
-  
+	
+		marker.addListener("click", () => {
+		map.setZoom(9);
+		map.setCenter(marker.getPosition());
+		});
+		
+		marker2.addListener("click", () => {
+		map.setZoom(9);
+		map.setCenter(marker2.getPosition());
+		});	
+		
+		marker3.addListener("click", () => {
+		map.setZoom(9);
+		map.setCenter(marker3.getPosition());
+		});
+		
+		marker4.addListener("click", () => {
+		map.setZoom(9);
+		map.setCenter(marker4.getPosition());
+		});
+
+		marker5.addListener("click", () => {
+		map.setZoom(9);
+		map.setCenter(marker5.getPosition());
+		});
+	}
         window.initMap = initMap;
     </script>
   
