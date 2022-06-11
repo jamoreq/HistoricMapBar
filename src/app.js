@@ -24,8 +24,8 @@ const apiOptions = {
 const mapOptions = {
   "tilt": 0,
   "heading": 0,
-  "zoom": 18,
-  "center": { lat: 35.6594945, lng: 139.6999859 },
+  "zoom": 19,
+  "center": { lat: 51.759445, lng: 19.457216 },
   "mapId": "7657aa4d539d898d"    
 }
 
