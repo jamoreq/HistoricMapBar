@@ -7,7 +7,7 @@
   <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            Lista artykułów
+            Artykuł
         </h2>
     </x-slot>
     <div class="container"> 
@@ -17,14 +17,15 @@
           </div>
       </div>
       <div class="col-md-12">
-        <p>Tytuł artykułu: <?php echo $article->title; ?></p>
+        <p><b>Tytuł artykułu:</b> <?php echo $article->title; ?></p><br>
       </div>
       <div class="col-md-12">
-        <p>Opis artykułu: </p>
+        <p><b>Treść artykułu:</b> </p>
         <?php echo $article->description; ?>
       </div>
+	  <br>
       <div class="col-md-12">
-        <p>Autor: <?php echo $article->author; ?></p>
+        <p><b>Autor:</b> <?php echo $article->author; ?></p>
       </div>
     </div>
 	  </x-app-layout>
