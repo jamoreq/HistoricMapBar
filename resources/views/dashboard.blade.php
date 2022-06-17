@@ -48,7 +48,7 @@
   
     <script type="text/javascript">
         function initMap() {
-          const myLatLng = { lat: 50.0541, lng: 19.9354 };
+          const myLatLng = { lat: 49.7838623, lng: 22.7677908};
 		  const myLatLng2 = { lat: 51.759445, lng: 19.457216};
 		  const myLatLng3 = { lat: 53.1324886, lng: 23.1688403 };
 		  const myLatLng4 = { lat: 53.428543, lng: 14.552812};

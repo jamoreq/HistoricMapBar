@@ -19,6 +19,7 @@
             @if($isOpen)
                 @include('livewire.create')
             @endif		
+			<a href="/article/create" class="bg-green-500 hover:bg-green-700 text-white font-bold py-2.5 px-2 rounded">Opublikuj artykuł</a>	
             <table class="table-fixed w-full">
                 <thead>
                     <tr class="bg-gray-100">
@@ -34,10 +35,10 @@
                         <td class="border px-8 py-2">{{ $post->id }}</td>
                         <td class="border px-4 py-2">{{ $post->title }}</td>
                         <td class="border px-4 py-2">{{ $post->body }}</td>
-                        <td class="border px-23 py-2">
+                        <td class="border px-12 py-2">
                         <button wire:click="edit({{ $post->id }})" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Edytuj</button>
                             <button wire:click="delete({{ $post->id }})" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">Usuń</button>	
-							<a href="/article/create" class="bg-green-500 hover:bg-green-700 text-white font-bold py-2.5 px-2 rounded">Opublikuj</a>							
+													
                         </td>
                     </tr>
                     @endforeach
